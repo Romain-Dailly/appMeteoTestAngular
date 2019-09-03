@@ -1,0 +1,17 @@
+.chartSize {
+  margin:auto;
+  max-width:85%;
+  border-top:1px bgColor solid;
+  padding-top:5px;
+  margin-top:15px;
+  box-shadow: 2px -2px 3px rgb(155, 7, 7);
+  margin-bottom:15px;
+}
+.baseChartOut {
+  max-width:1000px;
+  max-height:1000px;
+  min-height:300px;
+}
+.baseChart{
+  min-height:300px;
+}

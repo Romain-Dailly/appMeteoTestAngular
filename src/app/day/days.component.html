@@ -1,0 +1,14 @@
+<div class='chartSize'[ngStyle]="{'background':bgColor}" >
+<h2 class='centeredText'>{{title}}</h2>
+<div *ngIf='data && dataOk' class='flexCenter'>
+  <canvas baseChart class='baseChartOut'
+    [datasets]="data"
+    [labels]="xaxisCategories"
+    [options]="lineChartOptions"
+    [colors]="lineChartColor"
+    [legend]="lineChartLegend"
+    [chartType]="chartType"
+    [plugins]="lineChartPlugins">
+  </canvas>
+</div>
+</div>

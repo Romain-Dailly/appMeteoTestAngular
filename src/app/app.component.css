@@ -1,0 +1,15 @@
+.centeredText {
+  text-align:center;
+}
+.flexCenter {
+  display:flex;
+  justify-content:center;
+}
+.app-container {
+  min-height:100%;
+  background-color:rgb(179, 217, 255);
+  margin:0;padding:0;
+}
+.home {
+  margin-top:50%;
+}
