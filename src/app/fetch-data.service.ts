@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import {Observable} from 'rxjs/Rx';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +15,12 @@ export class FetchDataService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  private key:string='249faba785f8315b1a32a540f85af0ea';
-  private fetchUrl=`http://api.openweathermap.org/data/2.5/forecast?`;
-
   getWeatherWithCity(city:string) {
-    return this.http.get(`${this.fetchUrl}q=${city}&APPID=${this.key}&units=metric&lang=fr`);
+    return this.http.get(`${environment.fetchUrl}q=${city}&APPID=${environment.key}&units=metric&lang=fr`);
   };
   
   getWeatherWithGeolocation(lat:number, lon:number) {
-    return this.http.get(`${this.fetchUrl}lat=${lat}&lon=${lon}&APPID=${this.key}&units=metric&lang=fr`);
+    return this.http.get(`${environment.fetchUrl}lat=${lat}&lon=${lon}&APPID=${environment.key}&units=metric&lang=fr`);
   };
 
   getBg(color:string) {
