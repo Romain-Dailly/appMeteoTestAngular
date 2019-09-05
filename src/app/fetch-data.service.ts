@@ -9,8 +9,6 @@ export class FetchDataService {
 
   constructor(private http:HttpClient) { }
 
-  bgColor:string='';
-
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -22,17 +20,4 @@ export class FetchDataService {
   getWeatherWithGeolocation(lat:number, lon:number) {
     return this.http.get(`${environment.fetchUrl}lat=${lat}&lon=${lon}&APPID=${environment.key}&units=metric&lang=fr`);
   };
-
-  getBg(color:string) {
-    return color;
-  };
-
-  setBg(param:string):void {
-    param === 'temp' ?
-    this.bgColor = 'rgb(255, 236, 179)':
-    param === 'humidité'?
-    this.bgColor = 'rgb(230, 230, 255)':
-    this.bgColor = 'rgb(242, 242, 242)';
-  }
-
-}
+};

@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
-import { DaysComponent } from './day/days.component';
+import { ChartComponent } from './chart/chart.component';
 import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -14,7 +14,7 @@ import { ChartsModule } from 'ng2-charts';
     AppComponent,
     HomeComponent,
     SearchComponent,
-    DaysComponent
+    ChartComponent
   ],
   imports: [
     BrowserModule,

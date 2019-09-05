@@ -6,14 +6,14 @@ import * as moment from 'moment';
 moment.locale('fr');
 
 @Component({
-  selector: 'app-days',
-  templateUrl: './days.component.html',
+  selector: 'app-chart',
+  templateUrl: './chart.component.html',
   styleUrls: [
-    './days.component.css',
+    './chart.component.css',
     '../app.component.css'
   ]
 })
-export class DaysComponent implements OnInit, AfterViewChecked {
+export class ChartComponent implements OnInit, AfterViewChecked {
   @Input() data:[]; 
   @Input() dates:[]; 
   @Input() xaxisCategories:[];
@@ -21,8 +21,6 @@ export class DaysComponent implements OnInit, AfterViewChecked {
   @Input() dataType:string;
   @Input() chartType:string;
   @Input() dataOk:boolean;
-  @Input() bgColor:string;
-
 
   constructor() {
   }

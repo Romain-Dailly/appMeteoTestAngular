@@ -1,4 +1,11 @@
-<div class='chartSize'[ngStyle]="{'background':bgColor}" >
+<div class='chartSize' [ngStyle]="{
+  'background-color': dataType === 'temp'? 'rgb(255, 236, 179)':
+    (dataType === 'humidity'? 'rgb(230, 230, 255)':
+    'rgb(242, 242, 242)'),
+  'box-shadow': dataType === 'temp'? '2px -2px 3px rgb(255, 191, 0)':
+    (dataType === 'humidity'? '2px -2px 3px rgb(0, 0, 255)':
+    '2px -2px 3px rgb(0, 0, 0)')
+}" >
 <h2 class='centeredText'>{{title}}</h2>
 <div *ngIf='data && dataOk' class='flexCenter'>
   <canvas baseChart class='baseChartOut'

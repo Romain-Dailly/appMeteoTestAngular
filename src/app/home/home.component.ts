@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit {
   dataType:string='temp';
   chartType:string='line';
   dataOk:boolean=false;
-  bgColor:string;
 
   // Wait for fetch to display days component
   fetchDone:boolean=false;
@@ -74,13 +73,11 @@ export class HomeComponent implements OnInit {
 
   // Set data for the chart regarding the datatype
   setDataType(type:string){
-    this.fetchService.setBg(type);
-    this.bgColor=this.fetchService.getBg(this.fetchService.bgColor);
     this.dataType= type;
     this.dataType === 'temp' ?
    (this.graphTitle = 'Températures Moyennes en °c relevées toutes les 3 heures',
     this.data = this.setDataForChart(this.dataForChartTemp)):
-    this.dataType==='humidité'?
+    this.dataType==='humidity'?
     (this.graphTitle= 'Humidité en % relevée toutes les 3 heures',
     this.data = this.setDataForChart(this.dataForChartHumidity)):
     (this.graphTitle= 'Pression atmosphérique en hPa relevée toutes les 3 heures',
@@ -95,7 +92,7 @@ export class HomeComponent implements OnInit {
     };
     this.dataType === 'temp' ?
     this.data = this.setDataForChart(this.dataForChartTemp):
-    this.dataType==='humidité'?
+    this.dataType==='humidity'?
     this.data = this.setDataForChart(this.dataForChartHumidity):
     this.data = this.setDataForChart(this.dataForChartPressure);
       this.axisCategories = this.dataWeatherFilteredPerDay[0].map(dat=>{return moment.unix(dat.dt).format('LT')})

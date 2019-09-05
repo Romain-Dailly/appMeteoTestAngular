@@ -39,19 +39,19 @@
     >
     <h4> Températures </h4>
   </a>
-  <a class='button'[ngStyle]="{'background-color':dataType === 'humidité' ? '#5555e79b' : 'white' }"
-  (click)="setDataType('humidité')"
+  <a class='button'[ngStyle]="{'background-color':dataType === 'humidity' ? '#5555e79b' : 'white' }"
+  (click)="setDataType('humidity')"
     >
     <h4> Humidité </h4>
   </a>
-  <a class='button'[ngStyle]="{'background-color':dataType === 'pression' ? '#5555e79b' : 'white' }"
-  (click)="setDataType('pression')"
+  <a class='button'[ngStyle]="{'background-color':dataType === 'pressure' ? '#5555e79b' : 'white' }"
+  (click)="setDataType('pressure')"
     >
     <h4 style='margin-top:0.45rem;'> Pression atmosphérique </h4>
   </a>
 </div>
 <div *ngIf='fetchDone' class='textCentered'>
-  <app-days [dataType]="dataType" [data]="data" [dates]='dateOfDays' [xaxisCategories]='axisCategories'
-    [title]='graphTitle' [chartType]='chartType' [dataOk]='dataOk' [bgColor]='bgColor' >
-  </app-days>
+  <app-chart [dataType]="dataType" [data]="data" [dates]='dateOfDays' [xaxisCategories]='axisCategories'
+    [title]='graphTitle' [chartType]='chartType' [dataOk]='dataOk'>
+  </app-chart>
 </div>
