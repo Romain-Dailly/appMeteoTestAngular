@@ -3,33 +3,33 @@
     <app-search (cityChange)="cityParam= $event"></app-search>
   </div>
   <div class='flexCenter'>
-    <button (click)="getWeather('city')">Météo à {{cityParam}}</button>
+    <button (click)="getWeather('city')">{{textForTranslationFr.getMeteoButtonCity}} {{cityParam}}</button>
   </div>
   <div style="height:20px">
     </div>
     <div class='flexCenter'>
-      <button (click)="getWeather('location')">Météo à ma position</button>
+      <button (click)="getWeather('location')">{{textForTranslationFr.getMeteoButtonLocation}}</button>
     </div>
   </div>
   
   <div *ngIf='fetchDone'>
     <h2 class='centeredText'>{{date}}, {{city}}({{country}})</h2>
     <div class='flexCenter'>
-      <button (click)="changeCity()">Changer de ville</button>
+      <button (click)="changeCity()">{{textForTranslationFr.changeCityButton}}</button>
     </div>
   </div>
 <div *ngIf='fetchDone' class='chartStyle'>
-  <p class='centeredText'>Type de graphique :</p>
+  <p class='centeredText'>{{textForTranslationFr.labelForButtonsChartType}}</p>
   <div class='flexCenter'>
     <a class='button1'
     [ngStyle]="{'background-color':chartType === 'line' ? '#5555e79b' : 'white' }"
     (click)="toggleChartType('line')">
-      <h3>Lignes</h3>
+      <h3>{{textForTranslationFr.chartTypeButtonLines}}</h3>
     </a>
     <a class='button1'
     [ngStyle]="{'background-color':chartType === 'bar' ? '#5555e79b' : 'white' }"
     (click)="toggleChartType('bar')">
-      <h3>Barres</h3>
+      <h3>{{textForTranslationFr.chartTypeButtonBars}}</h3>
     </a>
   </div>
 </div>
@@ -37,17 +37,17 @@
   <a class='button'[ngStyle]="{'background-color':dataType === 'temp' ? '#5555e79b' : 'white' }"
   (click)="setDataType('temp')"
     >
-    <h4> Températures </h4>
+    <h4> {{textForTranslationFr.dataTypeButtonTemp}} </h4>
   </a>
   <a class='button'[ngStyle]="{'background-color':dataType === 'humidity' ? '#5555e79b' : 'white' }"
   (click)="setDataType('humidity')"
     >
-    <h4> Humidité </h4>
+    <h4> {{textForTranslationFr.dataTypeButtonHumidity}} </h4>
   </a>
   <a class='button'[ngStyle]="{'background-color':dataType === 'pressure' ? '#5555e79b' : 'white' }"
   (click)="setDataType('pressure')"
     >
-    <h4 style='margin-top:0.45rem;'> Pression atmosphérique </h4>
+    <h4 style='margin-top:0.45rem;'> {{textForTranslationFr.dataTypeButtonPressure}} </h4>
   </a>
 </div>
 <div *ngIf='fetchDone' class='textCentered'>

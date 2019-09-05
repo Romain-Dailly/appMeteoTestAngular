@@ -1,3 +1,4 @@
+import { textForTranslationFr } from './../textForTranslation/TextForTranslation';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,6 +9,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class SearchComponent implements OnInit {
   @Output() cityChange = new EventEmitter();
   cityParam:string;
+  textForTranslationFr = textForTranslationFr;
   
   changeCityParam() {
     this.cityChange.emit(this.cityParam);

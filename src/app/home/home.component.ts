@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchDataService } from '../fetch-data.service';
+import { textForTranslationFr } from '../textForTranslation/TextForTranslation';
 import * as moment from 'moment';
 
 moment.locale('fr');
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
   dataType:string='temp';
   chartType:string='line';
   dataOk:boolean=false;
-
+  textForTranslationFr = textForTranslationFr;
   // Wait for fetch to display days component
   fetchDone:boolean=false;
 
@@ -64,7 +65,7 @@ export class HomeComponent implements OnInit {
     return this.dataWeatherFilteredPerDay.map((dat:any[], i) => {
       return {
         label: i=== 0 ? 
-        `Demain, ${this.dateOfDays[i]}`:
+        `${textForTranslationFr.nameOfDataFirstDayTomorrow}, ${this.dateOfDays[i]}`:
         this.dateOfDays[i], 
         data:dat.map(da=> {return property === this.dataForChartTemp ? da.main.temp : property === this.dataForChartHumidity ? da.main.humidity:da.main.pressure})
         }
@@ -75,12 +76,12 @@ export class HomeComponent implements OnInit {
   setDataType(type:string){
     this.dataType= type;
     this.dataType === 'temp' ?
-   (this.graphTitle = 'Températures Moyennes en °c relevées toutes les 3 heures',
+   (this.graphTitle = textForTranslationFr.graphTitleTemp,
     this.data = this.setDataForChart(this.dataForChartTemp)):
     this.dataType==='humidity'?
-    (this.graphTitle= 'Humidité en % relevée toutes les 3 heures',
+    (this.graphTitle= textForTranslationFr.graphTitleHumidity,
     this.data = this.setDataForChart(this.dataForChartHumidity)):
-    (this.graphTitle= 'Pression atmosphérique en hPa relevée toutes les 3 heures',
+    (this.graphTitle= textForTranslationFr.graphTitlePressure,
     this.data = this.setDataForChart(this.dataForChartPressure));
   };
 
@@ -111,7 +112,6 @@ export class HomeComponent implements OnInit {
     type === 'city' ?
       this.fetchService.getWeatherWithCity(this.cityParam).subscribe(
         data => { 
-          console.log(data)
           this.dataWeatherDays = data;
           this.setDataForDays(data);
           this.city = this.dataWeatherDays.city.name;
