@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FetchDataService } from '../fetch-data.service';
 import { textForTranslationFr } from '../textForTranslation/TextForTranslation';
 import * as moment from 'moment';
+import {Observable} from 'rxjs';
 
 moment.locale('fr');
 
