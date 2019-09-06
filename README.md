@@ -10,7 +10,7 @@ In src/app/textForTranslation.ts, you can find all the text variables in french 
 
 ## Environment
 
-Url to call Api is in /home/loops/Work/Exercices/appMeteoTestAngular/src/environments/environment.ts.
+Url to call Api is in /src/environments/environment.ts.
 
 
 # AppMeteoTestAngular
