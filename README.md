@@ -1,6 +1,6 @@
 # MeteoChart
 
-2019/09/05, by Romain Dailly.
+2019/09/05, by [Romain Dailly](https://github.com/Romain-Dailly).
 Small app to test Angular 8 that shows meteo data on charts (ng2charts, chart.js) from API OpenWeatherMap.
 The app allows you to get meteo data from your location or a city of your choice. You can choose your data and the type of chart between two.
 
