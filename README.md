@@ -6,11 +6,11 @@ The app allows you to get meteo data from your location or a city of your choice
 
 ## Translation
 
-In src/app/textForTranslation.ts, you can find all the text variables in french for the whole app.
+In `src/app/textForTranslation.ts`, you can find all the text variables in french for the whole app.
 
 ## Environment
 
-Url to call Api is in /src/environments/environment.ts.
+Url to call Api is in `/src/environments/environment.ts`.
 
 
 # AppMeteoTestAngular
