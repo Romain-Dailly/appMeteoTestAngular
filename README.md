@@ -1,13 +1,14 @@
-## MeteoChart
+# MeteoChart
 
-Small app to test Angular 8, shows meteo data on charts from API OpenWeatherMap, 2019, september, 5 by Romain Dailly.
+2019/09/05, by Romain Dailly.
+Small app to test Angular 8 that shows meteo data on charts (ng2charts, chart.js) from API OpenWeatherMap.
 The app allows you to get meteo data from your location or a city of your choice. You can choose your data and the type of chart between two.
 
-### Translation
+## Translation
 
 In src/app/textForTranslation.ts, you can find all the text variables in french for the whole app.
 
-### Environment
+## Environment
 
 Url to call Api is in /home/loops/Work/Exercices/appMeteoTestAngular/src/environments/environment.ts.
 
